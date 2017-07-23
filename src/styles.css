@@ -1,1 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
+
+html {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+body {
+  height: 100%;
+  padding: 0;
+  overflow: auto;
+  margin: 0;
+  background-color: #c3c3c3;
+  /* -webkit-overflow-scrolling: touch; */
+}
+
+.pageRoot{
+	height: 100%;
+	width: 100%;
+  top: 0px;
+  position: absolute;
+  overflow: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 0px;  /* remove scrollbar space */
+  background: transparent;  /* optional: just make scrollbar invisible */
+}

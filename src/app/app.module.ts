@@ -1,16 +1,20 @@
+import { ShellComponent } from './components/shell/shell.component';
+import { LoadingService } from './components/loader/loader.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppComponent } from './app.component';
+import { ApiUtil } from './services/ApiUtil';
+import { routing } from './app.routing';
 
 @NgModule({
   declarations: [
-    AppComponent
+    ShellComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    routing
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [LoadingService, ApiUtil],
+  bootstrap: [ShellComponent]
 })
 export class AppModule { }
