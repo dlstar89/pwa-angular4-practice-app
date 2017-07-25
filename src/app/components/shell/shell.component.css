@@ -2,15 +2,26 @@
     display: flex; 
     width: 100%; 
     height: 100%; 
-    overflow: auto;
+    overflow: hidden;
+}
+
+.header{
+    margin: auto;
+    color: white;
+    text-align: center;
+    line-height: 50px;
+    /* display: inline-block; */
 }
 
 #backPage{
-    float: left;
-    background-color: aquamarine;
-    width: 250px;
+    /* position: absolute; */
+    /* float: left; */
+    background-color: white;
+    min-width: 250px;
     height: 100%;
-    border: 10px solid red;
+    border-right: 1px inset gray;
+    overflow: hidden;
+     /* border: 10px solid red;  */
 }
 
 #sideMenu{
@@ -19,31 +30,93 @@
 }
 
 #frontPage{
-    float: left;
-    background-color: antiquewhite;
+    /* position: absolute; */
+    /* float: left; */
+    background-color: white;
     height: 100%;
     width: 100%;
-    border: 10px solid purple;
+    overflow: hidden;
+     /* border: 10px solid purple;  */
 }
 
 #navBar{
+    /* position: fixed; */
     height: 50px;
     background-color: black;
 }
-
-.header{
-    margin: auto;
-    color: white;
+#menuButton{
+    display: none;
+    float: left;
+    height: 100%;
+    width: 50px;
+    border-radius: 10px;
+    position: absolute;
+    /* background-color: red; */
     text-align: center;
-    line-height: 50px;
+}
+.menuBar{
+    position: relative;
+    display: inline-block;
+    vertical-align: super;
+    width: 30px;
+    height: 3px;
+    border-radius: 3px;
+    background-color: white;
+    touch-action: none;
+    transition: 300ms;
+}
+.menuBar:first-child{top: 12px;}
+.menuBar:last-child{bottom: 12px;}
+
+#menuList{
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+}
+#menuList li{
+    padding-left: 10px;
+    border-bottom: 1px solid black;
+}
+#menuList li.active{
+    background-color: #adadad;
+    transition: 300ms;
+}
+#menuList li a{
+    width: 100%;
+    height: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: block;
+    color: black;
+    text-decoration: none;
 }
 
-#menuButton{
-    /* display: inline-block; */
-    display: none;
-    height: 100%;
-    width: 40px;
-    position: relative;
-    margin: auto;
-    background-color: red;
+
+
+@media (max-width:414px){
+    .openLeftMenu{
+        margin-left: 250px;
+    }
+
+    #frontPage{
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        box-shadow: -20px 0px 20px 20px rgba(0, 0, 0, 0.7);
+        transition-duration: 300ms;
+    }
+
+    #menuButton{
+        display: inline-block;
+    }
+    .menuBarOpened:first-child{
+        transform: rotateZ(-30deg);
+        left: -5px;
+        width: 20px;
+    }
+    .menuBarOpened:last-child{
+        transform: rotateZ(30deg);
+        width: 20px;
+        left: -5px;
+    }
 }

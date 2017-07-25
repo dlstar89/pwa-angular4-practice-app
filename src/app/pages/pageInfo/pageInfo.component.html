@@ -1,0 +1,22 @@
+<div class="pageRoot" [@routeFadeIn]="">
+  <div class="scrollableContainer">
+    <div>
+      <h1 style="text-align: center;">TECH USED</h1>
+
+      <ul>
+        <li *ngFor="let tech of arrayTechUsed; let index = index">
+          {{tech}}
+        </li>
+      </ul>
+
+
+      <h1 style="text-align: center;">OPTIMIZED FOR</h1>
+      <ul>
+        <li *ngFor="let browser of arrayOptimizedBrowsers; let index = index">
+          {{browser}}
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</div>

@@ -18,9 +18,20 @@ body {
 .pageRoot{
 	height: 100%;
 	width: 100%;
-  top: 0px;
   position: absolute;
-  overflow: hidden;
+}
+
+.scrollableContainer{
+  overflow-y: scroll;
+  overflow-x: hidden;
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+.scrollableContainer div{
+  margin-bottom: 50px;
+  padding-left: 10xp;
+  padding-right: 10xp;
 }
 
 ::-webkit-scrollbar {

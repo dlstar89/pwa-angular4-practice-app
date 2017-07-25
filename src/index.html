@@ -1,14 +1,35 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
-  <title>PWAAngular4Weather</title>
+  <title>PWA APP</title>
   <base href="/">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <link rel="manifest" href="/manifest.json">
+
 </head>
+
 <body>
-  <app-shell></app-shell>
+  <app-shell style=" position: absolute; 
+            width: 100%;
+            height: 100%;
+            overflow: hidden;">
+  </app-shell>
+
+  <!-- SERVICE WORKER  -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/service-worker.js').then(function (registration) {
+        console.log('Service Worker registered');
+      }).catch(function (err) {
+        console.log('Service Worker registration failed: ', err);
+      });
+    }
+  </script>
 </body>
+
 </html>
