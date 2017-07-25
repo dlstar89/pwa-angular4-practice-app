@@ -8,6 +8,7 @@
 
     <ul id="menuList">
       <li [ngClass]="{'active' : getActiveMenu('/')}"><a routerLink="/">HOME</a></li>
+      <li [ngClass]="{'active' : getActiveMenu('/pages')}"><a routerLink="/pages">PAGES</a></li>
       <li [ngClass]="{'active' : getActiveMenu('/info')}"><a routerLink="/info">INFO</a></li>
     </ul>
 
@@ -22,10 +23,10 @@
         <div class="menuBar"></div>
         <div class="menuBar" [ngClass]="{'menuBarOpened' : leftMenuOpen}"></div>
       </div>
-      <p class="header">HOME</p>
+      <p class="header">{{headerTitle}}</p>
     </div>
 
-    <div>
+    <div style="position: relative; width: 100%; height: 100%;">
       <router-outlet>
       </router-outlet>
     </div>

@@ -1,11 +1,10 @@
+import { PagePagesComponent } from './pages/pagePages/pagePages.component';
 import { PageInfoComponent } from './pages/pageInfo/pageInfo.component';
 import { Routes, RouterModule } from '@angular/router';
 
 // import { MediaItemFormComponent } from './media-item-form.component';
 // import { MediaItemListComponent } from './media-item-list.component';
 
-// import { PageallpeopleComponent } from './pages/pageallpeople/pageallpeople.component';
-// import { PagehomeComponent } from './pages/pagehome/pagehome.component';
 import { PageHomeComponent } from './pages/pageHome/pageHome.component';
 
 const appRoutes: Routes = [
@@ -14,6 +13,7 @@ const appRoutes: Routes = [
   // { path: '', pathMatch: 'full', redirectTo: 'all' }
   { path: '', component: PageHomeComponent },
   { path: 'info', component: PageInfoComponent },
+  { path: 'pages', component: PagePagesComponent },
   // { path: 'allPeople', component: PageallpeopleComponent },
   // { path: '**', component: PagehomeComponent }
 ];

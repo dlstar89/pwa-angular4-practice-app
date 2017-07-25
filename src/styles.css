@@ -1,5 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 
+
+/* @import "~@angular/material/prebuilt-themes/indigo-pink.css"; */
+
 html {
   height: 100%;
   width: 100%;
@@ -15,26 +18,26 @@ body {
   /* -webkit-overflow-scrolling: touch; */
 }
 
-.pageRoot{
-	height: 100%;
-	width: 100%;
+.pageRoot {
+  height: 100%;
+  width: 100%;
   position: absolute;
+  display: block;
 }
 
-.scrollableContainer{
+.scrollableContainer {
   overflow-y: scroll;
   overflow-x: hidden;
   position: relative;
   height: 100%;
   width: 100%;
-}
-.scrollableContainer div{
-  margin-bottom: 50px;
-  padding-left: 10xp;
-  padding-right: 10xp;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 ::-webkit-scrollbar {
-  width: 0px;  /* remove scrollbar space */
-  background: transparent;  /* optional: just make scrollbar invisible */
+  width: 0px;
+  /* remove scrollbar space */
+  background: transparent;
+  /* optional: just make scrollbar invisible */
 }

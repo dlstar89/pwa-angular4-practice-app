@@ -1,6 +1,6 @@
 {
-    "name": "My Insights",
-    "short_name": "My Insights",
+    "name": "PWA APP",
+    "short_name": "PWA APP",
     "icons": [
         {
             "src": "assets/icons/appicon-192x192.png",
