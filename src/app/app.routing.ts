@@ -12,8 +12,12 @@ const appRoutes: Routes = [
   // { path: ':medium', component: MediaItemListComponent },
   // { path: '', pathMatch: 'full', redirectTo: 'all' }
   { path: '', component: PageHomeComponent },
-  { path: 'info', component: PageInfoComponent },
+
   { path: 'pages', component: PagePagesComponent },
+  { path: 'spring', component: PagePagesComponent },
+  { path: 'form', component: PagePagesComponent },
+
+  { path: 'info', component: PageInfoComponent },
   // { path: 'allPeople', component: PageallpeopleComponent },
   // { path: '**', component: PagehomeComponent }
 ];

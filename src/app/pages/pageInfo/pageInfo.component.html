@@ -1,22 +1,39 @@
 <div class="pageRoot" [@routeFadeIn]="">
   <div class="scrollableContainer">
-    <div>
-      <h1 style="text-align: center;">TECH USED</h1>
 
+    <!-- TECH USED -->
+    <div class="listContainer">
+      <h1 style="text-decoration: underline;">TECH USED</h1>
       <ul>
         <li *ngFor="let tech of arrayTechUsed; let index = index">
           {{tech}}
         </li>
       </ul>
+    </div>
 
+    <br>
 
-      <h1 style="text-align: center;">OPTIMIZED FOR</h1>
+    <!-- 3RD PARTY MODULES -->
+    <div class="listContainer">
+      <h1 style="text-decoration: underline;">3RD PARTY</h1>
       <ul>
-        <li *ngFor="let browser of arrayOptimizedBrowsers; let index = index">
-          {{browser}}
+        <li *ngFor="let thirdParty of arrayThirdParty; let index = index">
+          {{thirdParty}}
         </li>
       </ul>
-
     </div>
+
+    <br>
+
+    <!-- LIST OF BROWSERS  -->
+    <div class="listContainer">
+      <h1 style="text-decoration: underline;">OPTIMIZED FOR</h1>
+      <ul class="listHorizontal">
+        <li *ngFor="let browser of arrayOptimizedBrowsers;">
+          <img src="../../../assets/images/browsers/{{browser}}_64x64.png" />
+        </li>
+      </ul>
+    </div>
+
   </div>
 </div>

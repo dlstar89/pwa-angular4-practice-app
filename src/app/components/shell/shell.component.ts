@@ -1,5 +1,6 @@
-import { Router } from '@angular/router';
-import { Component, OnInit } from '@angular/core';
+import { LoadingService } from './../loader/loader.component';
+import { NavigationStart, NavigationEnd, NavigationCancel, Router } from '@angular/router';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { routerTransition } from '../../_animations/animations';
 
 @Component({
@@ -7,18 +8,14 @@ import { routerTransition } from '../../_animations/animations';
   templateUrl: './shell.component.html',
   styleUrls: ['./shell.component.css']
 })
-export class ShellComponent implements OnInit {
+export class ShellComponent implements OnInit, AfterViewInit {
 
   leftMenuOpen = false;
   headerTitle = '';
 
 
-  constructor(private router: Router) { }
-
-  ngOnInit() {
-    this.setHeaderTitle('HOME');
-    console.log(this.router);
-  }
+  constructor(private router: Router,
+    private loadingService: LoadingService) { }
 
   toggleLeftMenu() {
     this.leftMenuOpen = !this.leftMenuOpen;
@@ -33,4 +30,25 @@ export class ShellComponent implements OnInit {
     this.headerTitle = title;
   }
 
+  ngOnInit() {
+    this.setHeaderTitle('HOME');
+    console.log(this.router);
+  }
+
+  ngAfterViewInit(): void {
+    this.router.events
+      .subscribe((event) => {
+        if (event instanceof NavigationStart) {
+          console.log(event);
+          this.loadingService.emitChange(true);
+        } else if (event instanceof NavigationEnd || event instanceof NavigationCancel) {
+          console.log(event);
+          this.loadingService.emitChange(false);
+        }
+      });
+
+      setTimeout(() => {
+        this.leftMenuOpen = true;
+      }, 2000);
+  }
 }

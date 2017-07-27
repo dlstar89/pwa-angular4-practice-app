@@ -1,0 +1,13 @@
+.listContainer {
+  text-align: center;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0px;
+  display: block;
+}
+
+.listHorizontal li {
+  display: inline-block;
+}

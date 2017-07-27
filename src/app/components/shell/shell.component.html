@@ -1,14 +1,15 @@
+<!-- APP SHELL -->
 <div id="shellRoot">
 
   <!-- BACK PAGE -->
   <div id="backPage" (click)="toggleLeftMenu()">
-    <div id="sideMenu">
+    <div class="navBar">
       <p class="header">MENU</p>
     </div>
 
     <ul id="menuList">
       <li [ngClass]="{'active' : getActiveMenu('/')}"><a routerLink="/">HOME</a></li>
-      <li [ngClass]="{'active' : getActiveMenu('/pages')}"><a routerLink="/pages">PAGES</a></li>
+      <li [ngClass]="{'active' : getActiveMenu('/pages')}"><a routerLink="/pages">SCROLLABLE PAGES</a></li>
       <li [ngClass]="{'active' : getActiveMenu('/info')}"><a routerLink="/info">INFO</a></li>
     </ul>
 
@@ -17,7 +18,7 @@
   <!-- FRONT PAGE -->
   <div id="frontPage" [ngClass]="{'openLeftMenu' : leftMenuOpen}">
 
-    <div id="navBar">
+    <div class="navBar">
       <div id="menuButton" (click)="toggleLeftMenu()">
         <div class="menuBar" [ngClass]="{'menuBarOpened' : leftMenuOpen}"></div>
         <div class="menuBar"></div>
@@ -34,3 +35,6 @@
   </div>
 
 </div>
+
+<!-- LOADING SCREEN OVERLAY -->
+<app-loader></app-loader>

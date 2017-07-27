@@ -16,7 +16,7 @@ export class LoadingService {
     } else {
       setTimeout(() => {
         this.loadEventEmitter.emit(data);
-      }, 100);
+      }, 1000);
     }
   }
 }

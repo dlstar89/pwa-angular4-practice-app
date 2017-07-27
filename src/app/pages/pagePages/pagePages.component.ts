@@ -11,10 +11,13 @@ import { SwiperComponent } from 'ngx-swiper-wrapper';
   styleUrls: ['./pagePages.component.css'],
   animations: [routeFadeIn]
 })
-export class PagePagesComponent implements OnInit, AfterViewInit {
+export class PagePagesComponent implements OnInit {
 
+  /**
+   * Configuration for Swiper
+   */
   public config: SwiperConfigInterface = {
-    initialSlide: 1,
+    // initialSlide: 1,
     scrollbar: '.swiper-scrollbar',
     direction: 'horizontal',
     slidesPerView: 1,
@@ -36,14 +39,10 @@ export class PagePagesComponent implements OnInit, AfterViewInit {
   constructor(public utils: GeneralUtilsService) { }
 
   ngOnInit() {
-
+    this.config.initialSlide = 1;
   }
 
-  public ngAfterViewInit(): void {
-
-  }
-
-  onIndexChange(event) {
-
+  onIndexChange(_currentPage) {
+    console.log('Page: ', _currentPage);
   }
 }

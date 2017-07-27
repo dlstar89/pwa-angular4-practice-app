@@ -11,7 +11,9 @@ import { fadeInAnimation } from '../../_animations/animations';
 export class PageInfoComponent implements OnInit {
 
   arrayTechUsed = [];
+  arrayThirdParty = [];
   arrayOptimizedBrowsers = [];
+
 
   constructor() { }
 
@@ -23,8 +25,10 @@ export class PageInfoComponent implements OnInit {
     this.arrayTechUsed.push('JavaScript');
     this.arrayTechUsed.push('TypeScript');
 
-    this.arrayOptimizedBrowsers.push('Chrome');
-    this.arrayOptimizedBrowsers.push('Safari');
+    this.arrayThirdParty.push('ngx-swiper-wrapper');
+
+    this.arrayOptimizedBrowsers.push('chrome');
+    this.arrayOptimizedBrowsers.push('safari');
   }
 
 }
