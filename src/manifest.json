@@ -3,7 +3,7 @@
     "short_name": "PWA APP",
     "icons": [
         {
-            "src": "assets/icons/appicon-192x192.png",
+            "src": "assets/icons/appicon_192x192.png",
             "sizes": "192x192",
             "type": "image\/png"
         }

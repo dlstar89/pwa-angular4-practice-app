@@ -1,0 +1,58 @@
+<div class="pageRoot" [@routeFadeIn]="">
+
+  <div class="scrollableContainer">
+
+    <form (ngSubmit)="onSubmit(myForm)" #myForm="ngForm">
+      <md-card style="top: 50px;">
+        
+        <md-card-title>Form</md-card-title>
+
+        <table class="example-full-width" cellspacing="0">
+          <tr>
+            <td>
+              <md-input-container class="example-full-width">
+                <input name="firstName" ngModel required mdInput placeholder="First Name">
+              </md-input-container>
+            </td>
+            <td>
+              <md-input-container class="example-full-width">
+                <input name="lastName" ngModel required mdInput placeholder="Last Name">
+              </md-input-container>
+            </td>
+          </tr>
+        </table>
+
+        <!-- <md-input-container>
+          <input mdInput [mdDatepicker]="picker" placeholder="Choose a date">
+          <button type="button" mdSuffix [md-datepicker-toggle]="picker"></button>
+        </md-input-container>
+        <md-datepicker #picker></md-datepicker> -->
+
+        <table class="example-full-width" cellspacing="0"><tr>
+          <td><md-input-container class="example-full-width">
+            <input name="city" ngModel mdInput placeholder="City">
+          </md-input-container></td>
+          <td><md-input-container class="example-full-width">
+            <input name="state" ngModel mdInput placeholder="State">
+          </md-input-container></td>
+          <td><md-input-container class="example-full-width">
+            <input name="postalCode" ngModel mdInput #postalCode maxlength="5" placeholder="Postal Code">
+            <md-hint align="end">{{postalCode.value.length}} / 5</md-hint>
+          </md-input-container></td>
+        </tr></table>
+
+        <br>
+        <div>
+          <button md-raised-button type="submit" [disabled]="!myForm.form.valid">SUBMIT</button>
+          <button md-raised-button type="reset" style="float: right;">RESET</button>
+        </div>
+
+        <p style="overflow-wrap: break-word;">{{formOutput}}</p>
+
+      </md-card>
+
+    </form>
+
+  </div>
+
+</div>

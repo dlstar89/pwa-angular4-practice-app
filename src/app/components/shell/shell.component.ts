@@ -47,8 +47,15 @@ export class ShellComponent implements OnInit, AfterViewInit {
         }
       });
 
+      /**OPEN MENU*/
       setTimeout(() => {
         this.leftMenuOpen = true;
+
+        /**CLOSE MENU*/
+        setTimeout(() => {
+          this.leftMenuOpen = false;
+        }, 1000);
+
       }, 2000);
   }
 }

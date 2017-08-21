@@ -6,6 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 // import { MediaItemListComponent } from './media-item-list.component';
 
 import { PageHomeComponent } from './pages/pageHome/pageHome.component';
+import { PageFormComponent } from './pages/pageForm/pageForm.component';
 
 const appRoutes: Routes = [
   // { path: 'add', component: MediaItemFormComponent },
@@ -15,11 +16,11 @@ const appRoutes: Routes = [
 
   { path: 'pages', component: PagePagesComponent },
   { path: 'spring', component: PagePagesComponent },
-  { path: 'form', component: PagePagesComponent },
+  { path: 'form', component: PageFormComponent },
 
   { path: 'info', component: PageInfoComponent },
   // { path: 'allPeople', component: PageallpeopleComponent },
   // { path: '**', component: PagehomeComponent }
 ];
 
-export const routing = RouterModule.forRoot(appRoutes);
+export const RoutingModule = RouterModule.forRoot(appRoutes);

@@ -23,7 +23,7 @@ export class PagePagesComponent implements OnInit {
     slidesPerView: 1,
     scrollbarHide: false,
     keyboardControl: true,
-    mousewheelControl: true,
+    mousewheelControl: false,
     scrollbarDraggable: true,
     scrollbarSnapOnRelease: true,
     pagination: '.swiper-pagination',
