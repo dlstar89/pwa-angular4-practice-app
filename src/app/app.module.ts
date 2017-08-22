@@ -20,6 +20,7 @@ import { PageHomeComponent } from './pages/pageHome/pageHome.component';
 import 'hammerjs';
 
 import { SwiperModule, SwiperConfigInterface } from 'ngx-swiper-wrapper';
+import { PageCameraComponent } from './pages/pageCamera/pageCamera.component';
 const SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
   slidesPerView: 'auto',
@@ -36,7 +37,8 @@ const SWIPER_CONFIG: SwiperConfigInterface = {
     PageHomeComponent,
     PageInfoComponent,
     PagePagesComponent,
-    PageFormComponent
+    PageFormComponent,
+    PageCameraComponent
   ],
   imports: [
     MyMaterialModuleModule,

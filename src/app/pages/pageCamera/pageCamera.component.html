@@ -1,0 +1,15 @@
+<div class="pageRoot" [@routeFadeIn]="">
+
+  <div class="scrollableContainer">
+    
+    <br>
+    
+    <video class="middle" #video width="90%"  autoplay style="border:1px solid #000000;"></video>
+
+    <br>
+    
+    <canvas class="middle" #canvas width={{video.clientWidth}} height={{video.clientHeight}} style="border:1px solid #000000;"></canvas>
+    <button class="middle" (click)="capture(video)" md-raised-button>CAPTURE</button>
+  </div>
+
+</div>
