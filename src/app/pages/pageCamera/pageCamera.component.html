@@ -1,15 +1,29 @@
 <div class="pageRoot" [@routeFadeIn]="">
 
   <div class="scrollableContainer">
-    
-    <br>
-    
-    <video class="middle" #video width="90%"  autoplay style="border:1px solid #000000;"></video>
 
     <br>
-    
-    <canvas class="middle" #canvas width={{video.clientWidth}} height={{video.clientHeight}} style="border:1px solid #000000;"></canvas>
+
+    <div>
+      <md-select [(ngModel)]="mySelect" #cameraSources placeholder="Video Source" (change)=getStream($event)>
+        <md-option *ngFor="let c of cameras; let idx = index" [value]="c.value">{{idx}} : {{ c.label }}</md-option>
+      </md-select>
+    </div>
+
+    <p> Selected camera: {{selectedCamera}} </p>
+
+    <br>
+
+    <video class="middle blackBorder" #video width="90%" autoplay></video>
+
+    <br>
+
     <button class="middle" (click)="capture(video)" md-raised-button>CAPTURE</button>
+
+    <br>
+
+    <canvas class="middle blackBorder" #canvas width={{video.clientWidth}} height={{video.clientHeight}}></canvas>
+
   </div>
 
 </div>

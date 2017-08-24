@@ -119,13 +119,13 @@
     display: inline-block;
   }
   .menuBarOpened:first-child {
-    transform: rotateZ(-30deg);
-    left: -5px;
+    transform: rotateZ(-36deg);
+    left: -6px;
     width: 20px;
   }
   .menuBarOpened:last-child {
-    transform: rotateZ(30deg);
+    transform: rotateZ(36deg);
     width: 20px;
-    left: -5px;
+    left: -6px;
   }
 }

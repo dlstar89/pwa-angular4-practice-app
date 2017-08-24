@@ -13,6 +13,14 @@ export class ShellComponent implements OnInit, AfterViewInit {
   leftMenuOpen = false;
   headerTitle = '';
 
+  links = [
+    {link: '/', label: 'HOME'},
+    {link: '/pages', label: 'PAGES'},
+    {link: '/form', label: 'FORM'},
+    {link: '/camera', label: 'CAMERA'},
+    {link: '/info', label: 'INFO'},
+  ];
+
 
   constructor(private router: Router,
     private loadingService: LoadingService) { }
@@ -31,18 +39,18 @@ export class ShellComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
-    this.setHeaderTitle('HOME');
-    console.log(this.router);
+    // this.setHeaderTitle('HOME');
+    // console.log(this.router);
   }
 
   ngAfterViewInit(): void {
     this.router.events
       .subscribe((event) => {
         if (event instanceof NavigationStart) {
-          console.log(event);
+          // console.log(event);
           this.loadingService.emitChange(true);
         } else if (event instanceof NavigationEnd || event instanceof NavigationCancel) {
-          console.log(event);
+          // console.log(event);
           this.loadingService.emitChange(false);
         }
       });

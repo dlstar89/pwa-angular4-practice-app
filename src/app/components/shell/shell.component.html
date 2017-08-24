@@ -8,11 +8,12 @@
     </div>
 
     <ul id="menuList">
-      <li [ngClass]="{'active' : getActiveMenu('/')}"><a routerLink="/">HOME</a></li>
+      <!-- <li [ngClass]="{'active' : getActiveMenu('/')}"><a routerLink="/">HOME</a></li>
       <li [ngClass]="{'active' : getActiveMenu('/pages')}"><a routerLink="/pages">SCROLLABLE PAGES</a></li>
       <li [ngClass]="{'active' : getActiveMenu('/form')}"><a routerLink="/form">FORM</a></li>
       <li [ngClass]="{'active' : getActiveMenu('/camera')}"><a routerLink="/camera">CAMERA</a></li>
-      <li [ngClass]="{'active' : getActiveMenu('/info')}"><a routerLink="/info">INFO</a></li>
+      <li [ngClass]="{'active' : getActiveMenu('/info')}"><a routerLink="/info">INFO</a></li> -->
+      <li *ngFor="let l of links; let idx = index" [ngClass]="{'active' : getActiveMenu(l.link)}"><a routerLink={{l.link}}>{{l.label}}</a></li>
     </ul>
 
   </div>
@@ -31,6 +32,8 @@
 
     <div style="position: relative; width: 100%; height: 100%;">
       <router-outlet>
+        <!-- LOADING SCREEN OVERLAY -->
+        <app-loader></app-loader>
       </router-outlet>
     </div>
 
@@ -38,5 +41,4 @@
 
 </div>
 
-<!-- LOADING SCREEN OVERLAY -->
-<app-loader></app-loader>
+
