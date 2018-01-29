@@ -3,53 +3,62 @@
   <div class="scrollableContainer">
 
     <form (ngSubmit)="onSubmit(myForm)" #myForm="ngForm">
-      <md-card style="top: 50px;">
-        
-        <md-card-title>Form</md-card-title>
+      <mat-card style="top: 50px;">
+
+        <mat-card-title>Form</mat-card-title>
 
         <table class="example-full-width" cellspacing="0">
           <tr>
             <td>
-              <md-input-container class="example-full-width">
-                <input name="firstName" ngModel required mdInput placeholder="First Name">
-              </md-input-container>
+              <mat-form-field class="example-full-width">
+                <input name="firstName" ngModel required matInput placeholder="First Name">
+              </mat-form-field>
             </td>
             <td>
-              <md-input-container class="example-full-width">
-                <input name="lastName" ngModel required mdInput placeholder="Last Name">
-              </md-input-container>
+              <mat-form-field class="example-full-width">
+                <input name="lastName" ngModel required matInput placeholder="Last Name">
+              </mat-form-field>
             </td>
           </tr>
         </table>
 
-        <!-- <md-input-container>
-          <input mdInput [mdDatepicker]="picker" placeholder="Choose a date">
-          <button type="button" mdSuffix [md-datepicker-toggle]="picker"></button>
-        </md-input-container>
-        <md-datepicker #picker></md-datepicker> -->
+        <!-- <mat-input-container>
+          <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+          <button type="button" matSuffix [mat-datepicker-toggle]="picker"></button>
+        </mat-input-container>
+        <mat-datepicker #picker></mat-datepicker> -->
 
-        <table class="example-full-width" cellspacing="0"><tr>
-          <td><md-input-container class="example-full-width">
-            <input name="city" ngModel mdInput placeholder="City">
-          </md-input-container></td>
-          <td><md-input-container class="example-full-width">
-            <input name="state" ngModel mdInput placeholder="State">
-          </md-input-container></td>
-          <td><md-input-container class="example-full-width">
-            <input name="postalCode" ngModel mdInput #postalCode maxlength="5" placeholder="Postal Code">
-            <md-hint align="end">{{postalCode.value.length}} / 5</md-hint>
-          </md-input-container></td>
-        </tr></table>
+        <table class="example-full-width" cellspacing="0">
+          <tr>
+            <td>
+              <mat-form-field class="example-full-width">
+                <input name="city" ngModel matInput placeholder="City">
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="example-full-width">
+                <input name="state" ngModel matInput placeholder="State">
+              </mat-form-field>
+            </td>
+            
+          </tr>
+          <tr><td>
+            <mat-form-field class="example-full-width">
+              <input name="postalCode" ngModel matInput #postalCode maxlength="5" placeholder="Postal Code">
+              <mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint>
+            </mat-form-field>
+          </td></tr>
+        </table>
 
         <br>
         <div>
-          <button md-raised-button type="submit" [disabled]="!myForm.form.valid">SUBMIT</button>
-          <button md-raised-button type="reset" style="float: right;">RESET</button>
+          <button mat-raised-button color="primary" type="submit" [disabled]="!myForm.form.valid">SUBMIT</button>
+          <button mat-raised-button type="reset" style="float: right;">RESET</button>
         </div>
 
         <p style="overflow-wrap: break-word;">{{formOutput}}</p>
 
-      </md-card>
+      </mat-card>
 
     </form>
 

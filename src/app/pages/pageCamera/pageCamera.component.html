@@ -5,9 +5,11 @@
     <br>
 
     <div>
-      <md-select [(ngModel)]="mySelect" #cameraSources placeholder="Video Source" (change)=getStream($event)>
-        <md-option *ngFor="let c of cameras; let idx = index" [value]="c.value">{{idx}} : {{ c.label }}</md-option>
-      </md-select>
+      <mat-form-field>
+        <mat-select [(ngModel)]="mySelect" #cameraSources placeholder="Video Source" (change)=getStream($event)>
+          <mat-option *ngFor="let c of cameras; let idx = index" [value]="c.value">{{idx}} : {{ c.label }}</mat-option>
+        </mat-select>
+      </mat-form-field>
     </div>
 
     <p> Selected camera: {{selectedCamera}} </p>
@@ -18,7 +20,7 @@
 
     <br>
 
-    <button class="middle" (click)="capture(video)" md-raised-button>CAPTURE</button>
+    <button class="middle" (click)="capture(video)" mat-raised-button>CAPTURE</button>
 
     <br>
 

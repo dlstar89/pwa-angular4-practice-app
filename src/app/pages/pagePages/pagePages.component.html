@@ -1,6 +1,6 @@
 <div class="pageRoot" [@routeFadeIn]="">
 
-  <swiper [config]="config" (indexChange)="onIndexChange($event)">
+  <swiper [config]="DEFAULT_SWIPER_CONFIG" (indexChange)="onIndexChange($event)">
     <div *ngFor="let a of utils.createRange(4); let index = index" 
     style="overflow-x: scroll;"
     [ngStyle]="{'background-color':colors[index]}">
