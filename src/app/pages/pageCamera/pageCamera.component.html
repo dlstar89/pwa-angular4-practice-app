@@ -2,29 +2,26 @@
 
   <div class="scrollableContainer">
 
-    <br>
-
-    <div>
+    <mat-card>
       <mat-form-field>
         <mat-select [(ngModel)]="mySelect" #cameraSources placeholder="Video Source" (change)=getStream($event)>
           <mat-option *ngFor="let c of cameras; let idx = index" [value]="c.value">{{idx}} : {{ c.label }}</mat-option>
         </mat-select>
       </mat-form-field>
-    </div>
 
-    <p> Selected camera: {{selectedCamera}} </p>
-
-    <br>
-
-    <video class="middle blackBorder" #video width="90%" autoplay></video>
+      <mat-card-title>Source: {{selectedCamera}}</mat-card-title>
+      <video class="middle blackBorder" #video width="90%" autoplay></video>
+    </mat-card>
 
     <br>
 
-    <button class="middle" (click)="capture(video)" mat-raised-button>CAPTURE</button>
+    <mat-card>
+      <button mat-raised-button color="primary" class="middle" (click)="capture(video)">CAPTURE</button>
 
-    <br>
+      <br>
 
-    <canvas class="middle blackBorder" #canvas width={{video.clientWidth}} height={{video.clientHeight}}></canvas>
+      <canvas class="middle blackBorder" #canvas width={{video.clientWidth}} height={{video.clientHeight}}></canvas>
+    </mat-card>
 
   </div>
 

@@ -14,12 +14,20 @@ export class ShellComponent implements OnInit, AfterViewInit {
   headerTitle = '';
 
   links = [
-    {link: '/', label: 'HOME'},
-    {link: '/pages', label: 'PAGES'},
-    {link: '/form', label: 'FORM'},
-    {link: '/camera', label: 'CAMERA'},
-    {link: '/info', label: 'INFO'},
+    { link: '/', label: 'HOME' },
+    { link: '/pages', label: 'PAGES' },
+    { link: '/form', label: 'FORM' },
+    { link: '/camera', label: 'CAMERA' },
+    { link: '/info', label: 'INFO' },
   ];
+
+  linkHeaders = {
+    '/': 'HOME',
+    '/pages': 'PAGES',
+    '/form': 'FORM',
+    '/camera': 'CAMERA',
+    '/info': 'INFO'
+  };
 
 
   constructor(private router: Router,
@@ -35,11 +43,10 @@ export class ShellComponent implements OnInit, AfterViewInit {
   }
 
   setHeaderTitle(title) {
-    this.headerTitle = title;
+    this.headerTitle = this.linkHeaders[title];
   }
 
   ngOnInit() {
-    // this.setHeaderTitle('HOME');
     // console.log(this.router);
   }
 
@@ -55,15 +62,15 @@ export class ShellComponent implements OnInit, AfterViewInit {
         }
       });
 
-      /**OPEN MENU*/
+    /**OPEN MENU*/
+    setTimeout(() => {
+      this.leftMenuOpen = true;
+
+      /**CLOSE MENU*/
       setTimeout(() => {
-        this.leftMenuOpen = true;
+        this.leftMenuOpen = false;
+      }, 1000);
 
-        /**CLOSE MENU*/
-        setTimeout(() => {
-          this.leftMenuOpen = false;
-        }, 1000);
-
-      }, 2000);
+    }, 2000);
   }
 }

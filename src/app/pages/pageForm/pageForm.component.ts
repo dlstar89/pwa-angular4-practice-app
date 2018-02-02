@@ -21,4 +21,8 @@ export class PageFormComponent implements OnInit {
     console.log(form.value);
     this.formOutput = JSON.stringify(form.value);
   }
+
+  reset(form) {
+    this.formOutput = null;
+  }
 }

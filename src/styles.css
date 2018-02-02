@@ -18,6 +18,9 @@ body {
   /* -webkit-overflow-scrolling: touch; */
 }
 
+body .pageRoot {
+  background-color: #c3c3c3;
+}
 .pageRoot {
   height: 100%;
   width: 100%;

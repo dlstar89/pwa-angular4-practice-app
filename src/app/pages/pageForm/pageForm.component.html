@@ -40,7 +40,7 @@
                 <input name="state" ngModel matInput placeholder="State">
               </mat-form-field>
             </td>
-            
+
           </tr>
           <tr><td>
             <mat-form-field class="example-full-width">
@@ -53,7 +53,7 @@
         <br>
         <div>
           <button mat-raised-button color="primary" type="submit" [disabled]="!myForm.form.valid">SUBMIT</button>
-          <button mat-raised-button type="reset" style="float: right;">RESET</button>
+          <button mat-raised-button color="primary" type="reset" (click)="reset(myForm)" style="float: right;">RESET</button>
         </div>
 
         <p style="overflow-wrap: break-word;">{{formOutput}}</p>
