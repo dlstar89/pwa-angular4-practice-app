@@ -8,6 +8,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { PageHomeComponent } from './pages/pageHome/pageHome.component';
 import { PageFormComponent } from './pages/pageForm/pageForm.component';
 import { PageCameraComponent } from './pages/pageCamera/pageCamera.component';
+import { PageMessagesComponent } from './pages/pageMessages/pageMessages.component';
 
 const appRoutes: Routes = [
   // { path: 'add', component: MediaItemFormComponent },
@@ -15,6 +16,7 @@ const appRoutes: Routes = [
   // { path: '', pathMatch: 'full', redirectTo: 'all' }
   { path: '', component: PageHomeComponent },
 
+  { path: 'messages', component: PageMessagesComponent },
   { path: 'pages', component: PagePagesComponent },
   { path: 'spring', component: PagePagesComponent },
   { path: 'form', component: PageFormComponent },

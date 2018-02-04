@@ -14,12 +14,12 @@ body {
   padding: 0;
   overflow: auto;
   margin: 0;
-  background-color: #c3c3c3;
+  background-color: #ffffff;
   /* -webkit-overflow-scrolling: touch; */
 }
 
 body .pageRoot {
-  background-color: #c3c3c3;
+  background-color: #6d6d75;
 }
 .pageRoot {
   height: 100%;

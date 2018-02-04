@@ -1,9 +1,14 @@
-import { WorkerAppModule } from '@angular/platform-webworker';
+// import { WorkerAppModule } from '@angular/platform-webworker';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ServiceWorkerModule } from '@angular/service-worker';
+
+import { AngularFireModule } from 'angularfire2';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+
+
 
 import { environment } from '../environments/environment';
 
@@ -16,7 +21,9 @@ import { LoaderComponent, LoadingService } from './components/loader/loader.comp
 import { ApiUtilsService } from './services/ApiUtilsService.service';
 import { RoutingModule } from './app.routing';
 import { GeneralUtilsService } from './services/generalUtils.service';
+import { MessagingService } from './services/messaging.service';
 
+import { PageMessagesComponent } from './pages/pageMessages/pageMessages.component';
 import { PagePagesComponent } from './pages/pagePages/pagePages.component';
 import { PageInfoComponent } from './pages/pageInfo/pageInfo.component';
 import { PageHomeComponent } from './pages/pageHome/pageHome.component';
@@ -25,7 +32,7 @@ import { PageCameraComponent } from './pages/pageCamera/pageCamera.component';
 
 import 'hammerjs';
 
-import { SwiperModule} from 'ngx-swiper-wrapper';
+import { SwiperModule } from 'ngx-swiper-wrapper';
 // import { SwiperModule, SwiperConfigInterface } from 'ngx-swiper-wrapper';
 // const SWIPER_CONFIG: SwiperConfigInterface = {
 //   direction: 'horizontal',
@@ -41,6 +48,7 @@ import { SwiperModule} from 'ngx-swiper-wrapper';
     LoaderComponent,
 
     PageHomeComponent,
+    PageMessagesComponent,
     PageInfoComponent,
     PagePagesComponent,
     PageFormComponent,
@@ -53,13 +61,16 @@ import { SwiperModule} from 'ngx-swiper-wrapper';
     BrowserAnimationsModule,
     FormsModule,
 
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
+
     RoutingModule,
 
     SwiperModule,
 
-    environment.production ? ServiceWorkerModule.register('/ngsw-worker.js') : []
+    ServiceWorkerModule.register('/ngsw-worker.js', {enabled: environment.production})
   ],
-  providers: [LoadingService, ApiUtilsService, GeneralUtilsService],
+  providers: [LoadingService, ApiUtilsService, GeneralUtilsService, MessagingService],
   bootstrap: [ShellComponent]
 })
 export class AppModule { }

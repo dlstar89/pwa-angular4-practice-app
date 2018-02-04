@@ -15,6 +15,7 @@ export class ShellComponent implements OnInit, AfterViewInit {
 
   links = [
     { link: '/', label: 'HOME' },
+    { link: '/messages', label: 'PUSH MESSAGES' },
     { link: '/pages', label: 'PAGES' },
     { link: '/form', label: 'FORM' },
     { link: '/camera', label: 'CAMERA' },
@@ -23,6 +24,7 @@ export class ShellComponent implements OnInit, AfterViewInit {
 
   linkHeaders = {
     '/': 'HOME',
+    '/messages': 'PUSH MESSAGES',
     '/pages': 'PAGES',
     '/form': 'FORM',
     '/camera': 'CAMERA',
@@ -63,14 +65,14 @@ export class ShellComponent implements OnInit, AfterViewInit {
       });
 
     /**OPEN MENU*/
-    setTimeout(() => {
-      this.leftMenuOpen = true;
+    // setTimeout(() => {
+    //   this.leftMenuOpen = true;
 
-      /**CLOSE MENU*/
-      setTimeout(() => {
-        this.leftMenuOpen = false;
-      }, 1000);
+    //   /**CLOSE MENU*/
+    //   setTimeout(() => {
+    //     this.leftMenuOpen = false;
+    //   }, 1000);
 
-    }, 2000);
+    // }, 2000);
   }
 }

@@ -1,0 +1,16 @@
+<div class="pageRoot" [@routeFadeIn]="">
+  <ul>
+    <li class="text" *ngFor="let item of items | async">
+      {{item.name}}
+    </li>
+  </ul>
+
+  <div *ngIf="msg.currentMessage | async as message" class="notification slideInRight">
+    <mat-card>
+      <img [src]="message.notification.icon" width="100px">
+      <h1>{{ message.notification.title }}</h1>
+      <p>{{ message.notification.body }}</p>
+    </mat-card>
+  </div>
+
+</div>

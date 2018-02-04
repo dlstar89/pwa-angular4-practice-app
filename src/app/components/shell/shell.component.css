@@ -17,7 +17,7 @@
   display: flex;
   flex-direction: column;
   /* flex: 1; */
-  background-color: white;
+  background-color: #19212b;
   min-width: 250px;
   max-width: 250px;
   height: 100%;
@@ -39,7 +39,8 @@
 .navBar {
   /* position: fixed; */
   height: 50px;
-  background-color: black;
+  background-color: #27303e;
+  box-shadow: 0px -2px 0 0px #6f6f6f inset;
 }
 
 #menuButton {
@@ -83,11 +84,11 @@
 
 #menuList li {
   padding-left: 10px;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid rgb(211, 211, 211);
 }
 
 #menuList li.active {
-  background-color: #adadad;
+  background-color: #ffffff;
   transition: 300ms;
 }
 
@@ -97,7 +98,7 @@
   padding-top: 10px;
   padding-bottom: 10px;
   display: block;
-  color: black;
+  color: #0094d2;
   text-decoration: none;
   text-overflow: ellipsis;
   white-space: nowrap;
